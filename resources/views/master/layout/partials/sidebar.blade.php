@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route('todos.create')}}">
           <i class="bi bi-menu-button-wide"></i><span>Create Todos</span><i class="ms-auto"></i>
         </a>
       </li>

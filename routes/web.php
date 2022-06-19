@@ -19,3 +19,4 @@ Route::get('/', function(){
 })->name('home');
 
 Route::get('/todos', [App\Http\Controllers\TodoController::class, 'index'])->name('todos');
+Route::get('/todos/create', [App\Http\Controllers\TodoController::class, 'create'])->name('todos.create');

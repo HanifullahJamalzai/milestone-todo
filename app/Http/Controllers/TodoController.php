@@ -9,4 +9,8 @@ class TodoController extends Controller
     public function index(){
         return view('master.todos');
     }
+
+    public function create(){
+        return view('master.create');
+    }
 }
