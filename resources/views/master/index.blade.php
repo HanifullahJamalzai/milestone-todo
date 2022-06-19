@@ -14,7 +14,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Example Card</h5>
+            <h5 class="card-title">Home Card</h5>
             <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
           </div>
         </div>
