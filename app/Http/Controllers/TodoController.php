@@ -13,4 +13,8 @@ class TodoController extends Controller
     public function create(){
         return view('master.create');
     }
+
+    public function store(){
+        return 'storing data';
+    }
 }

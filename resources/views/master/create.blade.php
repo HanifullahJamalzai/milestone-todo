@@ -15,20 +15,26 @@
             <div class="card-body">
               <h5 class="card-title">Create a Todo</h5>
 
-                <form>
+                <form action="{{ route('todos.store') }}" method="POST">
+                    
+                    {{-- cross site request forgery --}}
+                    @csrf
+                    {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}" /> --}}
+
                     <div class="row mb-3">
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Write your todo here...">
+                      <div class="col-sm-12">
+                        <textarea type="text" class="form-control" name="description" placeholder="Write your todo here..."></textarea>
                       </div>
                     </div>
 
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                      <input class="form-check-input" type="checkbox" name="status" id="flexSwitchCheckChecked" checked>
                       <label class="form-check-label" for="flexSwitchCheckChecked">Checked if you done your work</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-4" style="width: 100%">Save</button>
                 </form>
+
             </div>
           </div>
       </div>
