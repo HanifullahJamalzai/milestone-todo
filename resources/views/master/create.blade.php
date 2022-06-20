@@ -16,7 +16,6 @@
               <h5 class="card-title">Create a Todo</h5>
 
                 <form action="{{ route('todos.store') }}" method="POST">
-                    
                     {{-- cross site request forgery --}}
                     @csrf
                     {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}" /> --}}

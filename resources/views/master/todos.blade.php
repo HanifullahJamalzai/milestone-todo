@@ -27,15 +27,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacobasdfasdfasd</td>
-                    <td>Done</td>
-                    <td>
-                        <button class="btn btn-danger">Delete</button>
-                        <button class="btn btn-info text-white">Edit&nbsp;&nbsp;</button>
-                    </td>
-                  </tr>
+                  @foreach ($todos as $todo)
+                    <tr>
+                      <th scope="row">{{ $todo->id }}</th>
+                      <td>{{ $todo->description }}</td>
+                      <td>{{ $todo->status === 0 ? 'pending' : 'done' }}</td>
+                      <td>
+                          <button class="btn btn-danger">Delete</button>
+                          <button class="btn btn-info text-white">Edit&nbsp;&nbsp;</button>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
               <!-- End Table with hoverable rows -->
