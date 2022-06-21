@@ -40,6 +40,7 @@
                   @endforeach
                 </tbody>
               </table>
+              {{$todos->links()}}
               <!-- End Table with hoverable rows -->
 
             </div>

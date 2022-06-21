@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TodoRequest;
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Illuminate\Support\Facades\DB;
+
 class TodoController extends Controller
 {
     public function index(){
-        $todos = Todo::all();
+        // $todos = Todo::all(); //Fetch all todos from Model
+        
+        $todos = Todo::orderBy('id', 'desc')->paginate(8);
         return view('master.todos')->with('todos', $todos);
     }
 
@@ -15,25 +20,37 @@ class TodoController extends Controller
         return view('master.create');
     }
 
-    public function store(){
+    public function store(TodoRequest $request){
 
-        // laravel request
-        // dd(request()->all());
+        // This validation is used for small data 
 
-        $data = request()->all();
-        // dd($data);
+        // $request->validate([
+        //     'status' => 'required',
+        // ]);
 
-        if(request()->status){
+        // First Way
+        $data['description'] = $request->description;
+        if($request->status){
             $data['status'] = true;
         }else{
             $data['status'] = false;
         }
-
-        // dd($data);
+        // $todo = new Todo;
+        // $todo->create($data);
         
-        $todo = new Todo;
+        //You can insert all data at once, but here is a problem of boolean
+        // Todo::create($request->all());
+        // Todo::create($request->all());
 
-        $todo->create($data);
+        // Eloquent another way
+        // $todo = new Todo();
+        // $todo->status = $request->status ? true : false;
+        // $todo->description = $request->description;
+        // $todo->save();
+
+        // Query builder
+        DB::table('todos')->insert($data);
+
 
         return redirect()->route('todos');
     }

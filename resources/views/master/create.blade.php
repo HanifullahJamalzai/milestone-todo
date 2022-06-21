@@ -22,9 +22,13 @@
 
                     <div class="row mb-3">
                       <div class="col-sm-12">
-                        <textarea type="text" class="form-control" name="description" placeholder="Write your todo here..."></textarea>
+                        <textarea type="text" class="form-control" name="description" placeholder="Write your todo here...">{{ old('description') }}</textarea>
                       </div>
                     </div>
+
+                    @error('description')
+                      <span class="text-danger text-sm">{{$message}}</span>
+                    @enderror
 
                     <div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" name="status" id="flexSwitchCheckChecked" checked>
