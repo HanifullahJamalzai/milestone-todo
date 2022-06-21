@@ -40,7 +40,8 @@
                   @endforeach
                 </tbody>
               </table>
-              {{$todos->links()}}
+              {{-- pagination is here --}}
+              {{ $todos->links() }}
               <!-- End Table with hoverable rows -->
 
             </div>
