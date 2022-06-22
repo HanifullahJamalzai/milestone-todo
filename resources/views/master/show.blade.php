@@ -17,7 +17,11 @@
             <h5 class="card-title">Show card</h5>
             <p>{{$data->description}}</p>
           </div>
-          <form action="/todos/{{$data->id}}/delete" method="post">
+          
+          {{-- dynamic way --}}
+          <form action="{{route('todos.delete', ['id'=> $data->id])}}" method="post">
+            {{-- static way--}}
+          {{-- <form action="/todos/{{$data->id}}/delete" method="post"> --}}
             @csrf
             @method('delete')
             <button type="submit" class="btn btn-danger w-100" style="background: red;">Delete</button>

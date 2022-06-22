@@ -24,3 +24,5 @@ Route::post('/todos/store', [App\Http\Controllers\TodoController::class, 'store'
 Route::get('/todos/{id}/show', [App\Http\Controllers\TodoController::class, 'show'])->name('todos.show');
 Route::delete('/todos/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy'])->name('todos.delete');
 Route::get('/todos/{id}/edit', [App\Http\Controllers\TodoController::class, 'edit'])->name('todos.edit');
+
+
