@@ -32,7 +32,7 @@
                     <tr>
                       <th scope="row">{{ $todo->id }}</th>
                       <td>
-                        
+
                         <a href="/todos/{{$todo->id}}/show">
                           {{ $todo->description }}
                         </a>
@@ -41,7 +41,7 @@
                       <td>{{ $todo->status === 0 ? 'pending' : 'done' }}</td>
                       <td>
                           <button class="btn btn-danger">Delete</button>
-                          <button class="btn btn-info text-white">Edit&nbsp;&nbsp;</button>
+                          <a class="btn btn-info text-white" href="/todos/{{$todo->id}}/edit">Edit&nbsp;&nbsp;</a>
                       </td>
                     </tr>
                   @endforeach

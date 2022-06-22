@@ -79,4 +79,9 @@ class TodoController extends Controller
         $data = Todo::findOrFail($id)->delete();
         return redirect()->route('todos');
     }
+
+    public function edit($id){
+        $data = Todo::findOrFail($id);
+        return view('master.edit', compact('data'));
+    }
 }
