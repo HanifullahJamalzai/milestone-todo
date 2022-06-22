@@ -21,4 +21,5 @@ Route::get('/', function(){
 Route::get('/todos', [App\Http\Controllers\TodoController::class, 'index'])->name('todos');
 Route::get('/todos/create', [App\Http\Controllers\TodoController::class, 'create'])->name('todos.create');
 Route::post('/todos/store', [App\Http\Controllers\TodoController::class, 'store'])->name('todos.store');
- 
+Route::get('/todos/{id}/show', [App\Http\Controllers\TodoController::class, 'show'])->name('todos.show');
+Route::delete('/todos/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy'])->name('todos.delete');

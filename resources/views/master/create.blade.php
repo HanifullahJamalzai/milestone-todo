@@ -35,7 +35,7 @@
                       <label class="form-check-label" for="flexSwitchCheckChecked">Checked if you done your work</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-4" style="width: 100%">Save</button>
+                    <button type="submit" class="btn btn-primary mt-4" style="width: 100%; background: #0d6efd;">Save</button>
                 </form>
 
             </div>

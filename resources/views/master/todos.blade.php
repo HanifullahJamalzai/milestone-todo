@@ -26,11 +26,18 @@
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   @foreach ($todos as $todo)
                     <tr>
                       <th scope="row">{{ $todo->id }}</th>
-                      <td>{{ $todo->description }}</td>
+                      <td>
+                        
+                        <a href="/todos/{{$todo->id}}/show">
+                          {{ $todo->description }}
+                        </a>
+
+                      </td>
                       <td>{{ $todo->status === 0 ? 'pending' : 'done' }}</td>
                       <td>
                           <button class="btn btn-danger">Delete</button>
@@ -39,6 +46,7 @@
                     </tr>
                   @endforeach
                 </tbody>
+
               </table>
               {{-- pagination is here --}}
               {{ $todos->links() }}

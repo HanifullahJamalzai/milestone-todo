@@ -28,6 +28,20 @@ class TodoController extends Controller
         //     'status' => 'required',
         // ]);
 
+        // another way
+            // Todo::create(
+            //     $request->validate([
+            //         'description' => 'required',
+            //     ])
+            // );
+
+        // another 2 way
+        //  $data = $request->validate([
+        //     'description' => 'required',
+        //     ]);
+        // Todo::create($data);
+
+
         // First Way
         $data['description'] = $request->description;
         if($request->status){
@@ -49,9 +63,20 @@ class TodoController extends Controller
         // $todo->save();
 
         // Query builder
-        DB::table('todos')->insert($data);
+        // DB::table('todos')->insert($data);
 
 
+        return redirect()->route('todos');
+    }
+
+    public function show($id){
+        $data = Todo::findOrFail($id);
+        // $data = Todo::find($id);
+        return view('master.show', compact('data'));
+    }
+
+    public function destroy($id){
+        $data = Todo::findOrFail($id)->delete();
         return redirect()->route('todos');
     }
 }
