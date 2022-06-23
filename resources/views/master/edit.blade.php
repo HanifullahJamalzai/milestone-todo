@@ -15,8 +15,9 @@
             <div class="card-body">
               <h5 class="card-title">Edit a Todo</h5>
 
-                <form action="#" method="POST">
+                <form action="{{ route('todos.update', ['id' => $data->id]) }} " method="POST">
                     @csrf
+                    @method('PUT')
 
                     <div class="row mb-3">
                       <div class="col-sm-12">

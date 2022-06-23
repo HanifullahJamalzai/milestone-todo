@@ -84,4 +84,16 @@ class TodoController extends Controller
         $data = Todo::findOrFail($id);
         return view('master.edit', compact('data'));
     }
+
+    public function update(Request $request, $id){
+        // dd($request->all());
+        $todo = Todo::findOrFail($id);
+        // dd($todo);
+        $todo->description = $request->description;
+        $todo->status = $request->status ? true : false;
+        $todo->save();
+
+        return redirect()->back();
+
+    }
 }

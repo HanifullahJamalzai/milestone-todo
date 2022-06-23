@@ -24,5 +24,9 @@ Route::post('/todos/store', [App\Http\Controllers\TodoController::class, 'store'
 Route::get('/todos/{id}/show', [App\Http\Controllers\TodoController::class, 'show'])->name('todos.show');
 Route::delete('/todos/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy'])->name('todos.delete');
 Route::get('/todos/{id}/edit', [App\Http\Controllers\TodoController::class, 'edit'])->name('todos.edit');
+Route::put('/todos/{id}/update', [App\Http\Controllers\TodoController::class, 'update'])->name('todos.update');
 
-
+// Guest Routes
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'store'])->name('register.store');
