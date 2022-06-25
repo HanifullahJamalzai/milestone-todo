@@ -28,5 +28,8 @@ Route::put('/todos/{id}/update', [App\Http\Controllers\TodoController::class, 'u
 
 // Guest Routes
 Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'store'])->name('login');
+
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'store'])->name('register.store');
+Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
