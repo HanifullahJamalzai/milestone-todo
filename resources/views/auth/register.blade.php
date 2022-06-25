@@ -102,13 +102,6 @@
                             <label for="yourPassword" class="form-label">Photo</label>
                             <input type="file" name="password" class="form-control" id="yourPassword">
                         </div>
-    
-                        <div class="col-6">
-                          <div class="form-check">
-                              <label class="form-check-label" for="rememberMe">Remember me</label>
-                            <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                          </div>
-                        </div>
 
                         <div class="col-12">
                           <button class="btn btn-primary w-100" type="submit">Register</button>

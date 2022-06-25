@@ -2,7 +2,9 @@
 @section('title', 'Home')
 
 @section('contents')
-
+{{-- @php
+  dd(auth()->user)
+@endphp --}}
 <div class="pagetitle">
     <h1>Our Todo Applictaion</h1>
   </div><!-- End Page Title -->
