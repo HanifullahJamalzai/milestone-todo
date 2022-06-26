@@ -19,11 +19,11 @@ class LoginController extends Controller
         ]);
         // exit();
         if(!auth()->attempt($request->only('email', 'password'))){
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Credentials do not match');
         }
         else{
             auth()->attempt($request->only('email', 'password'), $request->remember);
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success', 'Welcome back');
         }
     }
 }
