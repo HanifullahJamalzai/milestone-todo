@@ -100,7 +100,7 @@
 
                         <div class="col-6">
                             <label for="yourPassword" class="form-label">Photo</label>
-                            <input type="file" name="password" class="form-control" id="yourPassword">
+                            <input type="file" name="photo" class="form-control" id="yourPassword">
                         </div>
 
                         <div class="col-12">
