@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::middleware(['isMahmood'])->group(function(){
+
 
 
 // Auth Routes
@@ -41,3 +43,6 @@ Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'store'
 
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'store'])->name('register.store');
+
+
+// });
