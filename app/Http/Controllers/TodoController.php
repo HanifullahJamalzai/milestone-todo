@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TodoRequest;
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
@@ -12,7 +13,7 @@ class TodoController extends Controller
     public function index(){
         // $todos = Todo::all(); //Fetch all todos from Model
         
-        $todos = Todo::orderBy('id', 'desc')->paginate(8);
+        $todos = Todo::orderBy('id', 'desc')->where('user_id', auth()->user()->id)->paginate(8);
         return view('master.todos')->with('todos', $todos);
     }
 
@@ -49,8 +50,20 @@ class TodoController extends Controller
         }else{
             $data['status'] = false;
         }
+        
+        // Helper
+        // $data['user_id'] = auth()->user()->id;
+        
+        // Facades
+        // $data['user_id'] = Auth::user()->id;
+
         // $todo = new Todo;
+        
         // $todo->create($data);
+        
+        // $todo->create($data);
+
+        auth()->user()->todos()->create($data);
         
         //You can insert all data at once, but here is a problem of boolean
         // Todo::create($request->all());

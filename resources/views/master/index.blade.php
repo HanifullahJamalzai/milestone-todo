@@ -11,9 +11,10 @@
 
   @if(session()->has('success'))
   {{-- @if(Session::has('success')) --}}
-      <span class="text-success">{{session()->get('success')}}</span>
-      {{-- <span class="text-success">{{session('success')}}</span> --}}
+      {{-- <span class="text-success">{{session()->get('success')}}</span> --}}
+      <span class="text-success">{{session('success')}}</span>
   @endif
+
 
   <section class="section">
     <div class="row">

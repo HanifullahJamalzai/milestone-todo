@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('/', function(){
         return view('master.index');
-    })->name('home')->middleware('auth');
+    })->name('home');
+    // ->middleware('auth');
     
     Route::get('/todos', [App\Http\Controllers\TodoController::class, 'index'])->name('todos');
     Route::get('/todos/create', [App\Http\Controllers\TodoController::class, 'create'])->name('todos.create');
