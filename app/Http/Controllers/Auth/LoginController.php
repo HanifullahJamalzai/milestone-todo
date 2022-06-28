@@ -10,6 +10,7 @@ class LoginController extends Controller
     public function login(){
         return view('auth.login');
     }
+
     public function store(Request $request){
         // dd($request->all());
 
@@ -17,12 +18,17 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6|max:255'
         ]);
+
         // exit();
         if(!auth()->attempt($request->only('email', 'password'))){
             return redirect()->back()->with('error', 'Credentials do not match');
         }
         else{
             auth()->attempt($request->only('email', 'password'), $request->remember);
+
+            // One Way to display Flash message
+            // session()->flash('success', 'Welcome Back');
+
             return redirect()->route('home')->with('success', 'Welcome back');
         }
     }

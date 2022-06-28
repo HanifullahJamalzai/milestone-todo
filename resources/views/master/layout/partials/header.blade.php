@@ -171,11 +171,12 @@
             @auth
                 
               <img 
-                src="{{asset(auth()->user()->photo)}}"
+                src="{{ asset(auth()->user()->photo) }}"
                 alt="Profile" class="rounded-circle"
               >
               
             @endauth
+
             <span class="d-none d-md-block dropdown-toggle ps-2">
                 {{ auth()->user()->name ?? 'login' }}
             </span>
@@ -183,7 +184,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>{{auth()->user()->name ?? 'login'}}</h6>
+              <h6>{{ auth()->user()->name ?? 'login' }}</h6>
               <span>Web Designer</span>
             </li>
             <li>

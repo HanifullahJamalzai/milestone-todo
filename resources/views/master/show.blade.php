@@ -14,7 +14,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Show card</h5>
+            <h5 class="card-title">Show todo</h5>
             <p>{{$data->description}}</p>
           </div>
 
@@ -27,6 +27,7 @@
             @method('delete')
             <button type="submit" class="btn btn-danger w-100" style="background: red;">Delete</button>
           </form>
+          
         </div>
 
 

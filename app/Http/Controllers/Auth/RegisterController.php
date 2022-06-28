@@ -45,7 +45,6 @@ class RegisterController extends Controller
             $user->photo = 'storage/images/'.$fileName;
         }
 
-
         $user->save();
 
         auth()->attempt($request->only('email', 'password'));
